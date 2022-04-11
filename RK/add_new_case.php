@@ -231,12 +231,14 @@ include 'insert.php';
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             
-<!--Form-->
+<!--Form INSIDE CARD BODY-->
  
+    
 
     <h1 class="text-center">ADD NEW CASE</h1>
     
     <div class="row">
+
             <div class="col-6">
         <p>
             <a class="btn btn-primary d-grid" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Criminal Cases</a>
@@ -250,23 +252,273 @@ include 'insert.php';
             </div>
                         
     </div>
-   
+   <!--CARD BODY-1-->
     <div class="row">
-    <div class="col">
-        <div class="collapse multi-collapse" id="multiCollapseExample1">
-        <div class="card card-body">
-            Some placeholder content for the first collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
+        <div class="col-12">
+            <div class="collapse multi-collapse" id="multiCollapseExample1">
+             <div class="card card-body">
+
+             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+                <div class="constainer-fluid">
+                <div class="row">
+            
+
+
+                   <h2>CRIMINAL CASES DATA ENTRY</h2> 
+                    <div class="col-sl-4 col-md-3 mb-2">  <!--court drop down-->
+                        <label for="formGroupExampleInput2" class="form-label" >Court Name</label><br>
+                        <select name="court_name"><br>
+                        <option selected></option>    
+                        <option value="dj">dj</option>    
+                        <option value="adj-1">adj-1</option>
+                        <option value="adj-2">adj-2-II</option>
+                        <option value="adj-sehwan">adj-sehwan</option>
+                        <option value="senior-1">senior-1</option>
+                        <option value="senior-2">senior-2</option>
+                        <option value="senior-sehwan">senior-sehwan</option>
+                        <option value="cjjm-1-kotri">cjjm-1-kotri</option>
+                        <option value="cjjm-2-kotri">cjjm-2-kotri</option>
+                        <option value="family">family</option>
+                        <option value="tbk-2">tbk-2</option>
+                        <option value="consumer">consumer</option>
+                        <option value="1">cjjm-1-sehwan</option>
+                        <option value="2">cjjm-2-sehwan</option>
+                        <option value="cjjm-3-tbk">cjjm-3-tbk</option>
+                        </select><br>
+                    </div>
+
+
+
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="case_type">Case Type</label><br>
+                        <select name="case_type" ><br>
+                        <option selected></option>
+                        <option value="criminal">Criminal</option>
+                        <option value="civil">Civil</option>
+                        <option value="family">Family</option>
+                        </select><br>
+                    </div>
+
+
+            
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput2" class="form-label">Case No</label>
+                        <br><input type="number" name="case_no" ><br>
+                    </div>
+            
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput" class="form-label">Case Year</label>
+                        <br><input type="number" name="case_year" ><br>
+                    </div>
+
+
+
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput2" class="form-label">Fir Number</label>
+                        <br><input type="number" name="fir_no" ><br>
+                    </div>
+                
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput" class="form-label">Fir Year</label>
+                        <br><input type="number" name="fir_year" ><br>
+                    </div>
+
+            
+            
+                     <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput2" class="form-label">Name of Parties</label>
+                        <br><input type="text" name="name_parties" ><br>
+                    </div>
+            
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput" class="form-label">Date of Institution</label>
+                        <br><input type="date" name="date_ins" ><br>
+                    </div>
+            
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput2" class="form-label">Date of disposal</label>
+                        <br><input type="date" name="date_disp" ><br>
+                    </div>
+            
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput" class="form-label">Shelf Number</label>
+                        <br><input type="number" name="shelf_no" ><br>
+                    </div>
+            
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput2" class="form-label">Row Number</label>
+                        <br><input type="number" name="row_no" ><br>    
+                    </div>
+
+
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput2" class="form-label">Bundle/Gathri Number </label>
+                        <br><input type="number" name="bundle_no" ><br>
+                    </div>  
+            
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput" class="form-label">Case Status</label>
+                        <br>
+                        <select name="case_status" ><br>
+                            <option selected></option>
+                            <option value="disposed">Disposed</option>
+                            <option value="dormant">Dormant</option>                
+                            <option value="out of district">Out of District</option>
+                            <option value="sent up to clerk">SENT UP TO CLERK</option>
+                        </select><br>
+                    </div>
+            
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="remarks">Remakrs</label><br>
+                        <textarea name="remarks" id="" cols="30" rows="10"></textarea><br>
+                    </div>    
+
+                    <div class="col-12">
+                        <input type="submit" name="submit"><br>
+                    </div>
+
+        </form>
+    
+                   
+            </div>
+
+        
+                </div>
+
+            </div>
+            </div>
         </div>
+    
+    <div class="col">
+
+        <div class="collapse multi-collapse" id="multiCollapseExample2">
+            <div class="card card-body">
+
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+                <div class="constainer-fluid">
+                <div class="row">
+            
+
+
+                   <h2>CIVIL / FAMILY CASES DATA ENTRY</h2> 
+                    <div class="col-sl-4 col-md-3 mb-2">  <!--court drop down-->
+                        <label for="formGroupExampleInput2" class="form-label" >Court Name</label><br>
+                        <select name="court_name"><br>
+                        <option selected></option>    
+                        <option value="dj">dj</option>    
+                        <option value="adj-1">adj-1</option>
+                        <option value="adj-2">adj-2-II</option>
+                        <option value="adj-sehwan">adj-sehwan</option>
+                        <option value="senior-1">senior-1</option>
+                        <option value="senior-2">senior-2</option>
+                        <option value="senior-sehwan">senior-sehwan</option>
+                        <option value="cjjm-1-kotri">cjjm-1-kotri</option>
+                        <option value="cjjm-2-kotri">cjjm-2-kotri</option>
+                        <option value="family">family</option>
+                        <option value="tbk-2">tbk-2</option>
+                        <option value="consumer">consumer</option>
+                        <option value="1">cjjm-1-sehwan</option>
+                        <option value="2">cjjm-2-sehwan</option>
+                        <option value="cjjm-3-tbk">cjjm-3-tbk</option>
+                        </select><br>
+                    </div>
+
+
+
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="case_type">Case Type</label><br>
+                        <select name="case_type" ><br>
+                        <option selected></option>
+                        <option value="criminal">Criminal</option>
+                        <option value="civil">Civil</option>
+                        <option value="family">Family</option>
+                        </select><br>
+                    </div>
+
+
+            
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput2" class="form-label">Case No</label>
+                        <br><input type="number" name="case_no" ><br>
+                    </div>
+            
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput" class="form-label">Case Year</label>
+                        <br><input type="number" name="case_year" ><br>
+                    </div>
+
+
+
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput2" class="form-label">Fir Number</label>
+                        <br><input type="number" name="fir_no" ><br>
+                    </div>
+                
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput" class="form-label">Fir Year</label>
+                        <br><input type="number" name="fir_year" ><br>
+                    </div>
+
+            
+            
+                     <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput2" class="form-label">Name of Parties</label>
+                        <br><input type="text" name="name_parties" ><br>
+                    </div>
+            
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput" class="form-label">Date of Institution</label>
+                        <br><input type="date" name="date_ins" ><br>
+                    </div>
+            
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput2" class="form-label">Date of disposal</label>
+                        <br><input type="date" name="date_disp" ><br>
+                    </div>
+            
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput" class="form-label">Shelf Number</label>
+                        <br><input type="number" name="shelf_no" ><br>
+                    </div>
+            
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput2" class="form-label">Row Number</label>
+                        <br><input type="number" name="row_no" ><br>    
+                    </div>
+
+
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput2" class="form-label">Bundle/Gathri Number </label>
+                        <br><input type="number" name="bundle_no" ><br>
+                    </div>  
+            
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput" class="form-label">Case Status</label>
+                        <br>
+                        <select name="case_status" ><br>
+                            <option selected></option>
+                            <option value="disposed">Disposed</option>
+                            <option value="dormant">Dormant</option>                
+                            <option value="out of district">Out of District</option>
+                            <option value="sent up to clerk">SENT UP TO CLERK</option>
+                        </select><br>
+                    </div>
+            
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="remarks">Remakrs</label><br>
+                        <textarea name="remarks" id="" cols="30" rows="10"></textarea><br>
+                    </div>    
+
+                    <div class="col-12">
+                        <input type="submit" name="submit"><br>
+                    </div>
+
+        </form>
+
+            </div>
         </div>
     </div>
     
-    <div class="col">
-        <div class="collapse multi-collapse" id="multiCollapseExample2">
-        <div class="card card-body">
-            Some placeholder content for the second collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
-        </div>
-        </div>
-    </div>
     </div>
 
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
@@ -276,125 +528,125 @@ include 'insert.php';
 
 
 
-            <div class="col-sl-4 col-md-3 mb-2">  <!--court drop down-->
-                <label for="formGroupExampleInput2" class="form-label" >Court Name</label><br>
-                <select name="court_name"><br>
-                    <option selected></option>    
-                    <option value="dj">dj</option>    
-                    <option value="adj-1">adj-1</option>
-                    <option value="adj-2">adj-2-II</option>
-                    <option value="adj-sehwan">adj-sehwan</option>
-                    <option value="senior-1">senior-1</option>
-                    <option value="senior-2">senior-2</option>
-                    <option value="senior-sehwan">senior-sehwan</option>
-                    <option value="cjjm-1-kotri">cjjm-1-kotri</option>
-                    <option value="cjjm-2-kotri">cjjm-2-kotri</option>
-                    <option value="family">family</option>
-                    <option value="tbk-2">tbk-2</option>
-                    <option value="consumer">consumer</option>
-                    <option value="1">cjjm-1-sehwan</option>
-                    <option value="2">cjjm-2-sehwan</option>
-                    <option value="cjjm-3-tbk">cjjm-3-tbk</option>
-                </select><br>
-                </div>
+                    <div class="col-sl-4 col-md-3 mb-2">  <!--court drop down-->
+                        <label for="formGroupExampleInput2" class="form-label" >Court Name</label><br>
+                        <select name="court_name"><br>
+                        <option selected></option>    
+                        <option value="dj">dj</option>    
+                        <option value="adj-1">adj-1</option>
+                        <option value="adj-2">adj-2-II</option>
+                        <option value="adj-sehwan">adj-sehwan</option>
+                        <option value="senior-1">senior-1</option>
+                        <option value="senior-2">senior-2</option>
+                        <option value="senior-sehwan">senior-sehwan</option>
+                        <option value="cjjm-1-kotri">cjjm-1-kotri</option>
+                        <option value="cjjm-2-kotri">cjjm-2-kotri</option>
+                        <option value="family">family</option>
+                        <option value="tbk-2">tbk-2</option>
+                        <option value="consumer">consumer</option>
+                        <option value="1">cjjm-1-sehwan</option>
+                        <option value="2">cjjm-2-sehwan</option>
+                        <option value="cjjm-3-tbk">cjjm-3-tbk</option>
+                        </select><br>
+                    </div>
 
 
 
-            <div class="col-sl-4 col-md-3 mb-4">
-            <label for="case_type">Case Type</label><br>
-            <select name="case_type" ><br>
-                <option selected></option>
-                <option value="criminal">Criminal</option>
-                <option value="civil">Civil</option>
-                <option value="family">Family</option>
-            </select><br>
-            </div>
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="case_type">Case Type</label><br>
+                        <select name="case_type" ><br>
+                        <option selected></option>
+                        <option value="criminal">Criminal</option>
+                        <option value="civil">Civil</option>
+                        <option value="family">Family</option>
+                        </select><br>
+                    </div>
 
 
             
-            <div class="col-sl-4 col-md-3 mb-4">
-            <label for="formGroupExampleInput2" class="form-label">Case No</label>
-            <br><input type="number" name="case_no" ><br>
-            </div>
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput2" class="form-label">Case No</label>
+                        <br><input type="number" name="case_no" ><br>
+                    </div>
             
-            <div class="col-sl-4 col-md-3 mb-4">
-            <label for="formGroupExampleInput" class="form-label">Case Year</label>
-             <br><input type="number" name="case_year" ><br>
-            </div>
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput" class="form-label">Case Year</label>
+                        <br><input type="number" name="case_year" ><br>
+                    </div>
 
 
 
-                <div class="col-sl-4 col-md-3 mb-4">
-                <label for="formGroupExampleInput2" class="form-label">Fir Number</label>
-                <br><input type="number" name="fir_no" ><br>
-                </div>
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput2" class="form-label">Fir Number</label>
+                        <br><input type="number" name="fir_no" ><br>
+                    </div>
                 
-                <div class="col-sl-4 col-md-3 mb-4">
-                <label for="formGroupExampleInput" class="form-label">Fir Year</label>
-                 <br><input type="number" name="fir_year" ><br>
-                </div>
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput" class="form-label">Fir Year</label>
+                        <br><input type="number" name="fir_year" ><br>
+                    </div>
 
             
             
-            <div class="col-sl-4 col-md-3 mb-4">
-            <label for="formGroupExampleInput2" class="form-label">Name of Parties</label>
-            <br><input type="text" name="name_parties" ><br>
-            </div>
+                     <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput2" class="form-label">Name of Parties</label>
+                        <br><input type="text" name="name_parties" ><br>
+                    </div>
             
-            <div class="col-sl-4 col-md-3 mb-4">
-            <label for="formGroupExampleInput" class="form-label">Date of Institution</label>
-            <br><input type="date" name="date_ins" ><br>
-            </div>
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput" class="form-label">Date of Institution</label>
+                        <br><input type="date" name="date_ins" ><br>
+                    </div>
             
-            <div class="col-sl-4 col-md-3 mb-4">
-            <label for="formGroupExampleInput2" class="form-label">Date of disposal</label>
-            <br><input type="date" name="date_disp" ><br>
-            </div>
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput2" class="form-label">Date of disposal</label>
+                        <br><input type="date" name="date_disp" ><br>
+                    </div>
             
-            <div class="col-sl-4 col-md-3 mb-4">
-            <label for="formGroupExampleInput" class="form-label">Shelf Number</label>
-            <br><input type="number" name="shelf_no" ><br>
-            </div>
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput" class="form-label">Shelf Number</label>
+                        <br><input type="number" name="shelf_no" ><br>
+                    </div>
             
-            <div class="col-sl-4 col-md-3 mb-4">
-            <label for="formGroupExampleInput2" class="form-label">Row Number</label>
-            <br><input type="number" name="row_no" ><br>    
-            </div>
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput2" class="form-label">Row Number</label>
+                        <br><input type="number" name="row_no" ><br>    
+                    </div>
 
 
-            <div class="col-sl-4 col-md-3 mb-4">
-            <label for="formGroupExampleInput2" class="form-label">Bundle/Gathri Number </label>
-            <br><input type="number" name="bundle_no" ><br>
-            </div>  
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput2" class="form-label">Bundle/Gathri Number </label>
+                        <br><input type="number" name="bundle_no" ><br>
+                    </div>  
             
-            <div class="col-sl-4 col-md-3 mb-4">
-            <label for="formGroupExampleInput" class="form-label">Case Status</label>
-            <br>
-            <select name="case_status" ><br>
-                <option selected></option>
-                <option value="disposed">Disposed</option>
-                <option value="dormant">Dormant</option>                
-                <option value="out of district">Out of District</option>
-                <option value="sent up to clerk">SENT UP TO CLERK</option>
-            </select><br>
-            </div>
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput" class="form-label">Case Status</label>
+                        <br>
+                        <select name="case_status" ><br>
+                            <option selected></option>
+                            <option value="disposed">Disposed</option>
+                            <option value="dormant">Dormant</option>                
+                            <option value="out of district">Out of District</option>
+                            <option value="sent up to clerk">SENT UP TO CLERK</option>
+                        </select><br>
+                    </div>
             
-            <div class="col-sl-4 col-md-3 mb-4">
-            <label for="remarks">Remakrs</label><br>
-            <textarea name="remarks" id="" cols="30" rows="10"></textarea><br>
-            </div>    
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="remarks">Remakrs</label><br>
+                        <textarea name="remarks" id="" cols="30" rows="10"></textarea><br>
+                    </div>    
 
-            <div class="col-12">
-            <input type="submit" name="submit"><br>
-            </div>
+                    <div class="col-12">
+                        <input type="submit" name="submit"><br>
+                    </div>
 
         </form>
     
                    
-    </div>
+            </div>
 
         
-</div>
+                </div>
 
 
 
