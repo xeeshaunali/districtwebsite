@@ -20,8 +20,8 @@ if(isset($_POST['submit']))
       && !empty($_POST['shelf_no'])
       && !empty($_POST['row_no'])
       && !empty($_POST['bundle_no'])     
-    //   && !empty($_POST['case_status'])
-    //   && !empty($_POST['remarks'])
+      && !empty($_POST['case_status'])
+      && !empty($_POST['remarks'])
 
 
         )

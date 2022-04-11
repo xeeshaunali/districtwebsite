@@ -146,10 +146,10 @@ include "header.php";
                   
                   <div class="card-body">
                     <h5 class="card-title text-center">Record Keeper Managment System<br> (RKMS)</h5>                    
-                    <p class="card-text text-center">Update your leaves before 08.30 AM</p>                    
+                    <p class="card-text text-center">KINDLY UPDATE RECORD KEEPER CASES</p>                    
                   </div>
                   <div class="card-footer">
-                    <a href="#" alt="LMS" type="button" class="btn btn-primary btn-lg text-center ">Enter</a>
+                    <a href="rk/index.php" alt="LMS" type="button" class="btn btn-primary btn-lg text-center ">Enter</a>
                   </div>
                 </div>
               </div>

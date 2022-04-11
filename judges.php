@@ -1,12 +1,5 @@
 <?php 
 include 'header.php';
-
-//connection command through connection.php
-include 'connection.php';
-$conn = OpenCon();
-echo "Connected Successfully";
-CloseCon($conn);
-
 ?>
 
 <!DOCTYPE html>
