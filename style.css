@@ -1,0 +1,97 @@
+
+
+
+
+.li-a {
+    font-size: 16px !important;
+    margin-right: 40px;
+    color: white;
+    font-weight: bolder;    
+    
+} 
+
+.li-a:hover{
+    color: white !important;
+    text-shadow: 1px 1px 1px white;
+    background: #ff96ad;
+    box-shadow: 0 0 5px #ff96ad, 0 0 25px #ff96ad, 0 0 50px #ff96ad, 0 0 200px #ff96ad;
+    transition: 0.5s;      
+    /* letter-spacing: 3px;    
+   text-transform: uppercase; */
+   
+}
+
+
+.list li  {
+    list-style: none;    
+    padding: 3px;    
+    border-color:gray;
+    font-size: 17px; 
+    
+    
+}
+
+.list li:hover {
+    background-color: green;    
+    border-radius: 10px;
+    
+
+}
+
+
+a{
+    text-decoration: none;
+    color: black;
+
+}
+
+a:hover{
+    color: whitesmoke;
+}
+
+.heading-card2{
+    font-weight: bolder;
+    color: white;
+    height: 50px;
+    padding-top: 15px;    
+    letter-spacing: 3px;
+
+}
+.para-card2{
+    color: green;
+    font-weight: bolder;
+    text-align: center;
+
+}
+
+.card2{    
+        border-top: 3px solid green;
+}
+
+.border-card{
+    box-shadow: 3px 3px 4px black;
+    box-sizing: border-box;
+}
+
+    
+
+
+
+button{
+    position: relative;
+    border: none;
+    transition: -45 ease-in;
+    z-index: 1;
+}
+
+/* .btn-1:hover{
+    background: #ff96ad;
+    box-shadow: 0 0 5px #ff96ad, 0 0 25px #ff96ad, 0 0 50px #ff96ad, 0 0 200px #ff96ad;
+} */
+
+/* .dj:hover{
+    box-shadow: 0 0 5px #ff96ad, 0 0 25px #ff96ad, 0 0 50px #ff96ad, 0 0 200px #ff96ad;
+    transition: 0.5s;
+} */
+
+

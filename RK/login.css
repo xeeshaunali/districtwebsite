@@ -1,0 +1,84 @@
+body{
+    background-color: #0E121A;
+}
+
+div.logo {
+    display: flex;
+    justify-content: center;    
+}
+
+img{
+    width: 400px;
+}
+
+form{
+    text-align: center;
+    width: 400px;
+    height: 400px;
+    padding: 10px;
+    margin: 10px auto;
+    justify-content: center;
+}
+
+
+
+label{
+    
+    color: white;
+    display: inline-block;
+    width: 60px;
+    text-align: left;
+        
+}
+
+legend{
+    background-color: teal;
+    text-align: left;
+        
+}
+
+input.user{
+    background-image: url(images/user.png);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: left;
+    padding: 10px 10px 10px 40px;
+    
+
+
+}
+
+input.password{
+    background-image: url(images/password.png);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: left;
+    padding: 10px 10px 10px 40px;
+    
+
+
+}
+
+
+input {
+    padding: 10px;
+    margin: 5px;
+    font-size: 1em;
+}
+
+fieldset{
+    border-radius: 10px;
+    border: 1px solid green;
+    
+}
+
+button{
+    padding: 10px;
+    margin: 5px;
+    font-size: 1em;
+    border: none;
+    background-color: royalblue;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
