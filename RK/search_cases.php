@@ -3,6 +3,13 @@
 include 'connection.php';
 
 
+
+
+
+
+
+
+
 // $result = mysqli_query($con,"SELECT * FROM shush where case_no and case_year");
 
 // echo "<table border='1'>
@@ -284,34 +291,69 @@ include 'connection.php';
             </div>
 
 
+            <div class="row">
 
-            <div class="col-6 mb-4">
-            <label for="formGroupExampleInput2" class="form-label">Case Number</label>
-            <br><input type="number" name="case_no" ><br>
+                <div class="col-12 mb-4 mt-4">
+                    <label>CASE NUMBER</label>
+                    <input type="text" class="form-control" placeholder="First name" aria-label="First name" name="case_no">
+                </div>
+
+                <div class="col-12 mb-4">
+                    <label>CASE YEAR</label>
+                    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" name="case_year">
+                </div>
+
+                <div class="col-12 mb-4">
+                    <label for="#">FIR NUMBER</label>
+                    <input type="text" class="form-control" placeholder="First name" aria-label="First name" name="fir_no">
+                </div>
+
+                <div class="col-12 mb-4">
+                    <label for="#">FIR YEAR</label>
+                    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" name="fir_year">
+                </div>
+
+                <div class="col-12 mb-4">
+                    <label for="#">NAME OF PARTIES</label>
+                    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" name="name_parties">
+                </div>
+
+            </div>
+
+
+
+            <!-- <div class="col-6 mb-4">
+                <label for="formGroupExampleInput2" class="form-label">Case Number</label>
+                <br><input type="number" name="case_no" ><br>
             </div>
 
             <div class="col-6 mb-4">
-            <label for="formGroupExampleInput2" class="form-label">Case Year</label>
-            <br><input type="number" name="case_year" ><br>
+                <label for="formGroupExampleInput2" class="form-label">Case Year</label>
+                <br><input type="number" name="case_year" ><br>
             </div>
 
 
 
             <div class="col-6 mb-4">
-            <label for="formGroupExampleInput2" class="form-label">Fir Number</label>
-            <br><input type="number" name="fir_no" ><br>
+                <label for="formGroupExampleInput2" class="form-label">Fir Number</label>
+                <br><input type="number" name="fir_no" ><br>
             </div>
 
             <div class="col-6 mb-4">
-            <label for="formGroupExampleInput2" class="form-label">Fir Year</label>
-            <br><input type="number" name="fir_year" ><br>
+                <label for="formGroupExampleInput2" class="form-label">Fir Year</label>
+                <br><input type="number" name="fir_year" ><br>
             </div>
+
+            <div class="col-sl-4 col-md-3 mb-4">
+                <label for="formGroupExampleInput2" class="form-label">Name of Parties</label>
+                <br><input type="text" name="name_parties" ><br>
+            </div> -->
 
 
             
 
             <div class="col-12">
-            <input type="submit" name="submit"><br>
+            <input type="submit" name="submit2"><br>
             </div>
 
         </form>

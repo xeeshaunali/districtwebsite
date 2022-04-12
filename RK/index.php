@@ -364,7 +364,7 @@ include 'connection.php';
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
                                                 TOTAL CASES IN RKMS</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">
                                                 
@@ -392,9 +392,18 @@ include 'connection.php';
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Cases sentup to clerks</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                                                Cases sentup to clerks
+                                                  
+                                            </div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php
+                                                   $rows = "SELECT * FROM shush WHERE case_status = 'sent up to clerk'";
+                                                   if($result= mysqli_query($con,$rows)){
+                                                       $rowcount = mysqli_num_rows($result);
+                                                       echo $rowcount;
+                                                   } 
+
+                                                ?>   </div>
                                         </div>
                                         <!-- <div class="col-auto">
                                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -410,9 +419,18 @@ include 'connection.php';
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                                Cases sentup to clerks</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                                                Cases out of District</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                            <?php
+                                                   $rows = "SELECT * FROM shush WHERE case_status = 'out of district'";
+                                                   if($result= mysqli_query($con,$rows)){
+                                                       $rowcount = mysqli_num_rows($result);
+                                                       echo $rowcount;
+                                                   } 
+
+                                                ?>   
+                                            </div>
                                         </div>
                                         <!-- <div class="col-auto">
                                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
