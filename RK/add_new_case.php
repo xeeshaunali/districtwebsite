@@ -93,9 +93,9 @@ include 'insert.php';
 
 
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="cases_register.php">
                     <i class="fa-brands fa-searchengin"></i>
-                    <span>Register</span></a>
+                    <span>Cases Register</span></a>
             </li>
 
             <li class="nav-item">

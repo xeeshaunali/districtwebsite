@@ -230,70 +230,11 @@ include 'connection.php';
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             
-<!--Form-->
-
-    <h1 class="text-center">SEARCH CASE</h1>
-    
-        
-            
-
-        <form action="#" method="POST">
-            <div class="constainer-fluid">
-                <div class="row">
-            <!-- <div class="col-12 mb-1 "> 
-            <label for="formGroupExampleInput2" class="form-label" >Court Name</label><br>
-            <select name="court_name"><br>
-                <option selected></option>
-                <option value="all">All</option>               
-                <option value="dj">dj</option>
-                <option value="adj-1">adj-1</option>
-                <option value="adj-2">adj-2-II</option>
-                <option value="adj-sehwan">adj-sehwan</option>
-                <option value="senior-1">senior-1</option>
-                <option value="senior-2">senior-2</option>
-                <option value="senior-sehwan">senior-sehwan</option>
-                <option value="cjjm-1-kotri">cjjm-1-kotri</option>
-                <option value="cjjm-2-kotri">cjjm-2-kotri</option>
-                <option value="family">family</option>
-                <option value="tbk-2">tbk-2</option>
-                <option value="consumer">consumer</option>
-                <option value="1">cjjm-1-sehwan</option>
-                <option value="2">cjjm-2-sehwan</option>
-                <option value="cjjm-3-tbk">cjjm-3-tbk</option>
-            </select><br>
-            </div> -->
-
-
-            <div class="row">
-
-                <div class="col-12 mb-4 mt-4">
-                    <label>CASE NUMBER</label>
-                    <input type="text" class="form-control" placeholder="First name" aria-label="First name" name="case_no">
-                </div>
-
-                <div class="col-12 mb-4">
-                    <label>CASE YEAR</label>
-                    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" name="case_year">
-                </div>
-
-                <div class="col-12 mb-4">
-                    <label for="#">FIR NUMBER</label>
-                    <input type="text" class="form-control" placeholder="First name" aria-label="First name" name="fir_no">
-                </div>
-
-                <div class="col-12 mb-4">
-                    <label for="#">FIR YEAR</label>
-                    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" name="fir_year">
-                </div>
-
-                <div class="col-12 mb-4">
-                    <label for="#">NAME OF PARTIES</label>
-                    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" name="name_parties">
-                </div>
-
-            </div>
-
-            <table class="table table-responsive table-hover">
+<!--table-->
+<div class="main-div">
+                <h1 class="text-center">CASES REGISTER</h1>
+    <div class="constainer-fluid">                
+                <table class="table table-responsive table-hover">
                     <thead>
                         <tr>
                         <th scope="col">Record No</th>
@@ -314,21 +255,23 @@ include 'connection.php';
                         <th scope="col" colspan="2">OPERATION</th>
                         </tr>
                     </thead>
-            <?php
-            if(isset($_POST['submit2'])){
 
-            $case_no = $_POST['case_no'];
-            $case_no = $_POST['case_year'];
-            $case_no = $_POST['fir_no'];
-            $case_no = $_POST['fir_year'];
-            
-            $searchquery = "SELECT * FROM shush";
-            $query = mysqli_query($con,$searchquery);
-            while($rel = mysqli_fetch_array($query)){
+                            <tbody>
+                                <!--FETCH QUERY-->
+                                        <?php $selectquery = "SELECT * FROM shush";
 
-                ?>
+                                        $query = mysqli_query($con,$selectquery);
 
-                <tr>
+                                        $num = mysqli_num_rows($query);
+                                        //echo $num;
+                                        // echo $res[2];
+                                        while($res= mysqli_fetch_array($query))
+                                        {
+                                            
+                                            ?>
+                                        
+                                    
+                                        <tr>
                                             <td><?php echo $res['record_no']; ?></td>
                                             <td><?php echo $res['court_name'];?></td>
                                             <td><?php echo $res['case_type']; ?></td>
@@ -349,58 +292,21 @@ include 'connection.php';
                                         </tr>
                                             
 
-             <?php
+                                            <?php
 
-            }         
-            
-            }
-            
+                                        }
 
+                                        ?>
 
-            ?>
-
-
-            <!-- <div class="col-6 mb-4">
-                <label for="formGroupExampleInput2" class="form-label">Case Number</label>
-                <br><input type="number" name="case_no" ><br>
-            </div>
-
-            <div class="col-6 mb-4">
-                <label for="formGroupExampleInput2" class="form-label">Case Year</label>
-                <br><input type="number" name="case_year" ><br>
-            </div>
-
-
-
-            <div class="col-6 mb-4">
-                <label for="formGroupExampleInput2" class="form-label">Fir Number</label>
-                <br><input type="number" name="fir_no" ><br>
-            </div>
-
-            <div class="col-6 mb-4">
-                <label for="formGroupExampleInput2" class="form-label">Fir Year</label>
-                <br><input type="number" name="fir_year" ><br>
-            </div>
-
-            <div class="col-sl-4 col-md-3 mb-4">
-                <label for="formGroupExampleInput2" class="form-label">Name of Parties</label>
-                <br><input type="text" name="name_parties" ><br>
-            </div> -->
-
-
-            
-
-            <div class="col-12">                
-            <input type="submit" name="submit2"><br>
-            </div>
-
-        </form>
-    
+                                                                                    
+                            </tbody>
+                </table>
                    
     </div>
+</div>
 
         
-</div>
+
 
 
 
