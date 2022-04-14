@@ -1,10 +1,11 @@
 <?php
 //connection command through connection.php
 include 'connection.php';
+include 'insert.php';
 
-?>
+
        
-
+?>
 
 
 <!DOCTYPE html>
@@ -223,119 +224,186 @@ include 'connection.php';
                     <!-- Content Row -->
                     <div class="row">
 
-                        <!-- Earnings (Monthly) Card Example -->
+
+
+                        <!-- Start of card  -->
                         <div class="col-xl-12 col-md-6 mb-4">
                             <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             
-<!--table with php code to show all data in html table-->
-<div class="main-div">
-                <h1 class="text-center">CASES REGISTER</h1>
-    <div class="constainer-fluid">                
-                <table class="table table-responsive table-hover">
-                    <thead>
-                        <tr>
-                        <th scope="col">Record No</th>
-                        <th scope="col">Court Name</th>
-                        <th scope="col">Case Type</th>
-                        <th scope="col">Case No</th>
-                        <th scope="col">Case Year</th>
-                        <th scope="col">Fir No</th>
-                        <th scope="col">Fir Year</th>
-                        <th scope="col">Parties</th>
-                        <th scope="col">institution</th>
-                        <th scope="col">Disposal</th>
-                        <th scope="col">Shelf No</th>
-                        <th scope="col">Row No</th>
-                        <th scope="col">Bundle / Gathri</th>
-                        <th scope="col">Case Status</th>
-                        <th scope="col">Remarks</th>
-                        <th scope="col" colspan="2">OPERATION</th>
-                        </tr>
-                    </thead>
+<!--Form INSIDE CARD BODY-->
+ 
+    
 
-                            <tbody>
-                                <!--FETCH QUERY-->
-                                        <?php $selectquery = "SELECT * FROM shush";
+    <h1 class="text-center">EDIT CASE DETAILS</h1>
+    
+    <!-- <div class="row">
 
-                                        $query = mysqli_query($con,$selectquery);
+            <div class="col-12">
+        <p>
+            <a class="btn btn-primary d-grid" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Criminal Cases</a>
+        </p>
+            </div>
 
-                                        $num = mysqli_num_rows($query);
-                                        //echo $num;
-                                        // echo $res[2];
-                                        while($res= mysqli_fetch_array($query))
-                                        {
-                                            
-                                            ?>
-                                        
-                                    
-                                        <tr>
-                                            <td><?php echo $res['record_no']; ?></td>
-                                            <td><?php echo $res['court_name'];?></td>
-                                            <td><?php echo $res['case_type']; ?></td>
-                                            <td><?php echo $res['case_no'];   ?></td>
-                                            <td><?php echo $res['case_year']; ?></td>
-                                            <td><?php echo $res['fir_no'];    ?></td>
-                                            <td><?php echo $res['fir_year'];  ?></td>
-                                            <td><?php echo $res['name_parties'];?></td>
-                                            <td><?php echo $res['date_ins'];  ?></td>
-                                            <td><?php echo $res['date_disp'];?></td>
-                                            <td><?php echo $res['shelf_no'];?></td>
-                                            <td><?php echo $res['row_no'];?></td>
-                                            <td><?php echo $res['bundle_no'];?></td>
-                                            <td><?php echo $res['case_status'];?></td>
-                                            <td><?php echo $res['remarks'];?></td>
+            <div class="col-12">
+        <p>
+             <a class="btn btn-primary d-grid" data-bs-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false" aria-controls="multiCollapseExample2">Civil / Family</a>        
+        </p>
+            </div>
+                        
+    </div> -->
 
-                                            <td> <a href="edit_case.php" data-bs-toggle="tooltip" data-bs-placement="left" title="Edit"><?php ?><i class="fa-solid fa-pen-to-square"></i></a></td>
+   <!--CARD BODY-1-->
+    <div class="row">
+        <div class="col-12">
+            <!-- <div class="collapse multi-collapse" id="multiCollapseExample1"> -->
+             <div class="card card-body">
 
-                                            <td><a href="#" data-bs-toggle="tooltip" data-bs-placement="left" title="Delet"><?php ?><i class="fa-solid fa-trash-can"></i></a></td>
-                                        </tr>
-                                            
+             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+                <div class="constainer-fluid">
+                <div class="row">
+            
 
-                                            <?php
 
-                                        }
+                   <!-- <h2>CRIMINAL CASES DATA ENTRY</h2>  -->
+                    <div class="col-sl-4 col-md-3 mb-2">  <!--court drop down-->
+                        <label for="formGroupExampleInput2" class="form-label" >Court Name</label><br>
+                        <select name="court_name"><br>
+                        <option selected></option>    
+                        <option value="dj">dj</option>    
+                        <option value="adj-1">adj-1</option>
+                        <option value="adj-2">adj-2-II</option>
+                        <option value="adj-sehwan">adj-sehwan</option>
+                        <option value="senior-1">senior-1</option>
+                        <option value="senior-2">senior-2</option>
+                        <option value="senior-sehwan">senior-sehwan</option>
+                        <option value="cjjm-1-kotri">cjjm-1-kotri</option>
+                        <option value="cjjm-2-kotri">cjjm-2-kotri</option>
+                        <option value="family">family</option>
+                        <option value="tbk-2">tbk-2</option>
+                        <option value="consumer">consumer</option>
+                        <option value="cjjm-1-sehwan">cjjm-1-sehwan</option>
+                        <option value="cjjm-2-sehwan">cjjm-2-sehwan</option>
+                        <option value="cjjm-3-tbk">cjjm-3-tbk</option>
+                        </select><br>
+                    </div>
 
-                                        ?>
 
-                                                                                    
-                            </tbody>
-                </table>
+
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="case_type">Case Type</label><br>
+                        <select name="case_type" ><br>
+                        <option value="criminal">Criminal</option>
+                        <option value="Civil">Civil</option>
+                        <option value="family">Family</option>
+                        <!-- <option value="criminal" selected="criminal">Criminal</option> -->
+                        <!-- <option value="civil">Civil</option>
+                        <option value="family">Family</option> -->
+                        </select><br>
+                    </div>
+
+
+            
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput2" class="form-label">Case No</label>
+                        <br><input type="number" name="case_no" ><br>
+                    </div>
+            
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput" class="form-label">Case Year</label>
+                        <br><input type="number" name="case_year" ><br>
+                    </div>
+
+
+
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput2" class="form-label">Fir Number</label>
+                        <br><input type="number" name="fir_no" ><br>
+                    </div>
+                
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput" class="form-label">Fir Year</label>
+                        <br><input type="number" name="fir_year" ><br>
+                    </div>
+
+            
+            
+                     <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput2" class="form-label">Name of Parties</label>
+                        <br><input type="text" name="name_parties" ><br>
+                    </div>
+            
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput" class="form-label">Date of Institution</label>
+                        <br><input type="date" name="date_ins" ><br>
+                    </div>
+            
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput2" class="form-label">Date of disposal</label>
+                        <br><input type="date" name="date_disp" ><br>
+                    </div>
+            
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput" class="form-label">Shelf Number</label>
+                        <br><input type="number" name="shelf_no" ><br>
+                    </div>
+            
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput2" class="form-label">Row Number</label>
+                        <br><input type="number" name="row_no" ><br>    
+                    </div>
+
+
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput2" class="form-label">Bundle/Gathri Number </label>
+                        <br><input type="number" name="bundle_no" ><br>
+                    </div>  
+            
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput" class="form-label">Case Status</label>
+                        <br>
+                        <select name="case_status" ><br>
+                            <option selected></option>
+                            <option value="disposed">Disposed</option>
+                            <option value="dormant">Dormant</option>                
+                            <option value="out of district">Out of District</option>
+                            <option value="sent up to clerk">SENT UP TO CLERK</option>
+                        </select><br>
+                    </div>
+            
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="remarks">Remakrs</label><br>
+                        <textarea name="remarks" id="" cols="30" rows="10"></textarea><br>
+                    </div>    
+
+                    <div class="col-12">
+                        <input type="submit" name="edit"><br>
+                    </div>
+
+        </form>
+    
                    
-    </div>
-</div>
+            </div>
 
         
+                </div>
 
+            </div>
+            </div>
+        </div>
 
-
+        <!--End of form-->
 
                                             
-                                        </div>
-                                       
+                                        </div>                                       
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                    </div>
-
+                        </div>                        
                   
-
-            </div>
-          
-
-            
-
-            
-
-
-
-
-
-
+        <!--End of card-->  
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
@@ -398,12 +466,4 @@ include 'connection.php';
 
 </body>
 
-
-<!--tooltip postion script-->
-<!-- <script>
-var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-  return new bootstrap.Tooltip(tooltipTriggerEl)
-})
-</script> -->
 </html>
