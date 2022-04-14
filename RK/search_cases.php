@@ -315,12 +315,14 @@ include 'connection.php';
                         </tr>
                     </thead>
             <?php
+
+
             if(isset($_POST['submit2'])){
 
             $case_no = $_POST['case_no'];
-            $case_no = $_POST['case_year'];
-            $case_no = $_POST['fir_no'];
-            $case_no = $_POST['fir_year'];
+            $case_year = $_POST['case_year'];
+            $fir_no = $_POST['fir_no'];
+            $fir_year = $_POST['fir_year'];
             
             $searchquery = "SELECT * FROM shush";
             $query = mysqli_query($con,$searchquery);

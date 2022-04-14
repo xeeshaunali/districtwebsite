@@ -288,7 +288,7 @@ include 'connection.php';
                                             <td><?php echo $res['case_status'];?></td>
                                             <td><?php echo $res['remarks'];?></td>
 
-                                            <td> <a href="edit_case.php?id=<?php echo $res['record_no']; ?>" data-bs-toggle="tooltip" data-bs-placement="left" title="Edit"><?php ?><i class="fa-solid fa-pen-to-square"></i></a></td>
+                                            <td> <a href="edit_case.php?record_no=<?php echo $res['record_no']; ?>" data-bs-toggle="tooltip" data-bs-placement="left" title="Edit"><?php ?><i class="fa-solid fa-pen-to-square"></i></a></td>
 
                                             <td><a href="#" data-bs-toggle="tooltip" data-bs-placement="left" title="Delet"><?php ?><i class="fa-solid fa-trash-can"></i></a></td>
                                         </tr>

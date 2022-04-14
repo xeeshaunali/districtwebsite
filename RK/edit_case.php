@@ -1,10 +1,88 @@
 <?php
 //connection command through connection.php
-include 'connection.php';
-include 'insert.php';
+include 'connection.php'; 
+
+$ids = $_GET['record_no'];
+$showquery = "SELECT * FROM shush WHERE record_no={$ids}";
+$showdata = mysqli_query($con,$showquery);
+$result = mysqli_fetch_array($showdata);
+
+if(isset($_POST['edit'])) // CRIMINAL FORM PHP CODE
+
+{
+
+    if
+        (
+// check to see if feild is not empty
+
+         !empty($_POST['court_name'])
+      && !empty($_POST['case_type'])
+      && !empty($_POST['case_no'])
+      && !empty($_POST['case_year'])
+      && !empty($_POST['fir_no'])
+      && !empty($_POST['fir_year'])
+      && !empty($_POST['name_parties'])
+      && !empty($_POST['date_ins'])
+      && !empty($_POST['date_disp'])
+      && !empty($_POST['shelf_no'])
+      && !empty($_POST['row_no'])
+      && !empty($_POST['bundle_no'])     
+      && !empty($_POST['case_status'])
+      && !empty($_POST['remarks'])
 
 
-       
+        )
+
+    {
+//variable declaration as tables created in db
+
+    $court_name = $_POST['court_name'];
+    $case_type = $_POST['case_type'];
+    $case_no = $_POST['case_no'];
+    $case_year = $_POST['case_year'];
+    $fir_no = $_POST['fir_no'];
+    $fir_year = $_POST['fir_year'];
+    $name_parties = $_POST['name_parties'];
+    $date_ins = $_POST['date_ins'];
+    $date_disp = $_POST['date_disp'];
+    $shelf_no = $_POST['shelf_no'];
+    $row_no = $_POST['row_no'];
+    $bundle_no = $_POST['bundle_no'];
+    $case_status = $_POST['case_status'];   
+    $remarks = $_POST['remarks'];
+
+//query Criminla Form
+
+
+    $result = "INSERT INTO shush(court_name,case_type,case_no,case_year,fir_no,fir_year,name_parties,date_ins,date_disp,shelf_no,row_no,bundle_no,case_status,remarks)VALUES('$court_name','$case_type','$case_no','$case_year','$fir_no','$fir_year','$name_parties','$date_ins','$date_disp','$shelf_no','$row_no','$bundle_no','$case_status','$remarks')";
+
+    if(mysqli_query($con,$result)){
+        ?>
+        <script>
+            alert("Data has been inserted")
+        </script>
+        <?php
+    }
+    else{
+        ?>
+        <script>
+            alert("Data not inserted Error")
+        </script>
+        <?php
+    }
+
+} else {
+    ?>
+        <script>
+            alert("Please Enter All data")
+        </script>
+        <?php
+}
+
+
+
+}
+
 ?>
 
 
@@ -224,9 +302,7 @@ include 'insert.php';
                     <!-- Content Row -->
                     <div class="row">
 
-
-
-                        <!-- Start of card  -->
+                        <!-- Earnings (Monthly) Card Example -->
                         <div class="col-xl-12 col-md-6 mb-4">
                             <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
@@ -239,54 +315,38 @@ include 'insert.php';
 
     <h1 class="text-center">EDIT CASE DETAILS</h1>
     
-    <!-- <div class="row">
+    
 
-            <div class="col-12">
-        <p>
-            <a class="btn btn-primary d-grid" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Criminal Cases</a>
-        </p>
-            </div>
-
-            <div class="col-12">
-        <p>
-             <a class="btn btn-primary d-grid" data-bs-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false" aria-controls="multiCollapseExample2">Civil / Family</a>        
-        </p>
-            </div>
-                        
-    </div> -->
-
-   <!--CARD BODY-1-->
+   
     <div class="row">
-        <div class="col-12">
-            <!-- <div class="collapse multi-collapse" id="multiCollapseExample1"> -->
+        <div class="col-12">            
              <div class="card card-body">
+
+        <!--------------------------CASE EDIT FORM------------------------------------------>
 
              <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
                 <div class="constainer-fluid">
                 <div class="row">
-            
 
-
-                   <!-- <h2>CRIMINAL CASES DATA ENTRY</h2>  -->
                     <div class="col-sl-4 col-md-3 mb-2">  <!--court drop down-->
-                        <label for="formGroupExampleInput2" class="form-label" >Court Name</label><br>
+                        <label for="formGroupExampleInput2" class="form-label">Court Name</label><br>
                         <select name="court_name"><br>
-                        <option selected></option>    
-                        <option value="dj">dj</option>    
-                        <option value="adj-1">adj-1</option>
-                        <option value="adj-2">adj-2-II</option>
-                        <option value="adj-sehwan">adj-sehwan</option>
-                        <option value="senior-1">senior-1</option>
-                        <option value="senior-2">senior-2</option>
-                        <option value="senior-sehwan">senior-sehwan</option>
-                        <option value="cjjm-1-kotri">cjjm-1-kotri</option>
-                        <option value="cjjm-2-kotri">cjjm-2-kotri</option>
-                        <option value="family">family</option>
-                        <option value="tbk-2">tbk-2</option>
-                        <option value="consumer">consumer</option>
-                        <option value="cjjm-1-sehwan">cjjm-1-sehwan</option>
-                        <option value="cjjm-2-sehwan">cjjm-2-sehwan</option>
-                        <option value="cjjm-3-tbk">cjjm-3-tbk</option>
+                        <option selected><?php echo $result['court_name']; ?></option>    
+                        <option value="<?php echo $res['record_no']; ?>">dj</option>    
+                        <option value="<?php echo $res['record_no']; ?>">adj-1</option>
+                        <option value="<?php echo $res['record_no']; ?>">adj-2-II</option>
+                        <option value="<?php echo $res['record_no']; ?>">adj-sehwan</option>
+                        <option value="<?php echo $res['record_no']; ?>">senior-1</option>
+                        <option value="<?php echo $res['record_no']; ?>">senior-2</option>
+                        <option value="<?php echo $res['record_no']; ?>">senior-sehwan</option>
+                        <option value="<?php echo $res['record_no']; ?>">cjjm-1-kotri</option>
+                        <option value="<?php echo $res['record_no']; ?>">cjjm-2-kotri</option>
+                        <option value="<?php echo $res['record_no']; ?>">family</option>
+                        <option value="<?php echo $res['record_no']; ?>">tbk-2</option>
+                        <option value="<?php echo $res['record_no']; ?>">consumer</option>
+                        <option value="<?php echo $res['record_no']; ?>">cjjm-1-sehwan</option>
+                        <option value="<?php echo $res['record_no']; ?>">cjjm-2-sehwan</option>
+                        <option value="<?php echo $res['record_no']; ?>">cjjm-3-tbk</option>
                         </select><br>
                     </div>
 
@@ -295,8 +355,9 @@ include 'insert.php';
                     <div class="col-sl-4 col-md-3 mb-4">
                         <label for="case_type">Case Type</label><br>
                         <select name="case_type" ><br>
+                        <option><?php echo $result['case_type'];?></option>
                         <option value="criminal">Criminal</option>
-                        <option value="Civil">Civil</option>
+                        <option value="civil">Civil</option>
                         <option value="family">Family</option>
                         <!-- <option value="criminal" selected="criminal">Criminal</option> -->
                         <!-- <option value="civil">Civil</option>
@@ -308,63 +369,63 @@ include 'insert.php';
             
                     <div class="col-sl-4 col-md-3 mb-4">
                         <label for="formGroupExampleInput2" class="form-label">Case No</label>
-                        <br><input type="number" name="case_no" ><br>
+                        <br><input type="number" name="case_no" value="<?php echo $result['case_no']; ?>" ><br>
                     </div>
             
                     <div class="col-sl-4 col-md-3 mb-4">
                         <label for="formGroupExampleInput" class="form-label">Case Year</label>
-                        <br><input type="number" name="case_year" ><br>
+                        <br><input type="number" name="case_year" value="<?php echo $result['case_year']; ?>" ><br>
                     </div>
 
 
 
                     <div class="col-sl-4 col-md-3 mb-4">
                         <label for="formGroupExampleInput2" class="form-label">Fir Number</label>
-                        <br><input type="number" name="fir_no" ><br>
+                        <br><input type="number" name="fir_no" value="<?php echo $result['fir_no']; ?>" ><br>
                     </div>
                 
                     <div class="col-sl-4 col-md-3 mb-4">
                         <label for="formGroupExampleInput" class="form-label">Fir Year</label>
-                        <br><input type="number" name="fir_year" ><br>
+                        <br><input type="number" name="fir_year" value="<?php echo $result['fir_year']; ?>" ><br>
                     </div>
 
             
             
                      <div class="col-sl-4 col-md-3 mb-4">
                         <label for="formGroupExampleInput2" class="form-label">Name of Parties</label>
-                        <br><input type="text" name="name_parties" ><br>
+                        <br><input type="text" name="name_parties" value="<?php echo $result['name_parties']; ?>" ><br>
                     </div>
             
                     <div class="col-sl-4 col-md-3 mb-4">
                         <label for="formGroupExampleInput" class="form-label">Date of Institution</label>
-                        <br><input type="date" name="date_ins" ><br>
+                        <br><input type="date" name="date_ins" value="<?php echo $result['date_ins']; ?>" ><br>
                     </div>
             
                     <div class="col-sl-4 col-md-3 mb-4">
                         <label for="formGroupExampleInput2" class="form-label">Date of disposal</label>
-                        <br><input type="date" name="date_disp" ><br>
+                        <br><input type="date" name="date_disp" value="<?php echo $result['date_disp']; ?>" >><br>
                     </div>
             
                     <div class="col-sl-4 col-md-3 mb-4">
                         <label for="formGroupExampleInput" class="form-label">Shelf Number</label>
-                        <br><input type="number" name="shelf_no" ><br>
+                        <br><input type="number" name="shelf_no" value="<?php echo $result['shelf_no']; ?>"><br>
                     </div>
             
                     <div class="col-sl-4 col-md-3 mb-4">
                         <label for="formGroupExampleInput2" class="form-label">Row Number</label>
-                        <br><input type="number" name="row_no" ><br>    
+                        <br><input type="number" name="row_no" value="<?php echo $result['row_no']; ?>" ><br>    
                     </div>
 
 
                     <div class="col-sl-4 col-md-3 mb-4">
                         <label for="formGroupExampleInput2" class="form-label">Bundle/Gathri Number </label>
-                        <br><input type="number" name="bundle_no" ><br>
+                        <br><input type="number" name="bundle_no" value="<?php echo $result['bundle_no']; ?>" ><br>
                     </div>  
             
                     <div class="col-sl-4 col-md-3 mb-4">
                         <label for="formGroupExampleInput" class="form-label">Case Status</label>
                         <br>
-                        <select name="case_status" ><br>
+                        <select name="case_status" value="<?php echo $result['case_status']; ?>" ><br>
                             <option selected></option>
                             <option value="disposed">Disposed</option>
                             <option value="dormant">Dormant</option>                
@@ -375,7 +436,7 @@ include 'insert.php';
             
                     <div class="col-sl-4 col-md-3 mb-4">
                         <label for="remarks">Remakrs</label><br>
-                        <textarea name="remarks" id="" cols="30" rows="10"></textarea><br>
+                        <textarea name="remarks" id="" cols="30" rows="10" ><?php echo $result['remarks']; ?></textarea><br>
                     </div>    
 
                     <div class="col-12">
@@ -392,18 +453,39 @@ include 'insert.php';
 
             </div>
             </div>
-        </div>
+        
 
-        <!--End of form-->
+        
+    
+                   
+         
+
+
 
                                             
-                                        </div>                                       
+                                        </div>
+                                       
                                     </div>
                                 </div>
                             </div>
-                        </div>                        
+                        </div>
+                        
+                    </div>
+
                   
-        <!--End of card-->  
+
+            </div>
+          
+
+            
+
+            
+
+
+
+
+
+
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
