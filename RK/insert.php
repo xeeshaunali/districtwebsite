@@ -160,6 +160,14 @@ if(isset($_POST['submit1'])) //CIVIL / FAMILY FORM PHP CODE
 
 //EDIT 
 
+$record_nos = $_GET['record_no'];
+
+$showquery = "SELECT * FROM shush WHERE record_no = {$record_nos}";
+
+$showdata = mysqli_query($con,$showquery);
+
+$fetchdata = mysqli_fetch_array($showdata);
+
 if(isset($_POST['edit'])) // EDIT FORM PHP CODE
 
 {
