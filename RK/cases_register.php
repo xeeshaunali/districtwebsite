@@ -232,7 +232,7 @@ include 'connection.php';
                                             
 <!--table with php code to show all data in html table-->
 <div class="main-div">
-                <h1 class="text-center">CASES REGISTER</h1>
+                <h1 class="text-center text-primary">RECORD ROOM REGISTER</h1>
     <div class="constainer-fluid">                
                 <table class="table table-responsive table-hover">
                     <thead>
@@ -244,6 +244,8 @@ include 'connection.php';
                         <th scope="col">Case Year</th>
                         <th scope="col">Fir No</th>
                         <th scope="col">Fir Year</th>
+                        <th scope="col">Sections</th>
+                        <th scope="col">PS</th>
                         <th scope="col">Parties</th>
                         <th scope="col">institution</th>
                         <th scope="col">Disposal</th>
@@ -279,6 +281,8 @@ include 'connection.php';
                                             <td><?php echo $res['case_year']; ?></td>
                                             <td><?php echo $res['fir_no'];    ?></td>
                                             <td><?php echo $res['fir_year'];  ?></td>
+                                            <td><?php echo $res['sections'];    ?></td>
+                                            <td><?php echo $res['ps'];  ?></td>
                                             <td><?php echo $res['name_parties'];?></td>
                                             <td><?php echo $res['date_ins'];  ?></td>
                                             <td><?php echo $res['date_disp'];?></td>
@@ -306,6 +310,23 @@ include 'connection.php';
                    
     </div>
 </div>
+
+<!--Pagination----->
+<nav aria-label="...">
+  <ul class="pagination">
+    <li class="page-item disabled">
+      <span class="page-link">Previous</span>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item active" aria-current="page">
+      <span class="page-link">2</span>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
 
         
 

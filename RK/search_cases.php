@@ -231,8 +231,9 @@ include 'connection.php';
                                         <div class="col mr-2">
                                             
 <!--Form-->
+<div class="container-fluid">
 
-    <h1 class="text-center">SEARCH CASE</h1>
+    <h1 class="text-center text-primary">SEARCH CASE</h1>
     
         
             
@@ -240,28 +241,7 @@ include 'connection.php';
         <form action="#" method="POST">
             <div class="constainer-fluid">
                 <div class="row">
-            <!-- <div class="col-12 mb-1 "> 
-            <label for="formGroupExampleInput2" class="form-label" >Court Name</label><br>
-            <select name="court_name"><br>
-                <option selected></option>
-                <option value="all">All</option>               
-                <option value="dj">dj</option>
-                <option value="adj-1">adj-1</option>
-                <option value="adj-2">adj-2-II</option>
-                <option value="adj-sehwan">adj-sehwan</option>
-                <option value="senior-1">senior-1</option>
-                <option value="senior-2">senior-2</option>
-                <option value="senior-sehwan">senior-sehwan</option>
-                <option value="cjjm-1-kotri">cjjm-1-kotri</option>
-                <option value="cjjm-2-kotri">cjjm-2-kotri</option>
-                <option value="family">family</option>
-                <option value="tbk-2">tbk-2</option>
-                <option value="consumer">consumer</option>
-                <option value="1">cjjm-1-sehwan</option>
-                <option value="2">cjjm-2-sehwan</option>
-                <option value="cjjm-3-tbk">cjjm-3-tbk</option>
-            </select><br>
-            </div> -->
+           
 
 
             <div class="row">
@@ -291,118 +271,21 @@ include 'connection.php';
                     <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" name="name_parties">
                 </div>
 
-            </div>
-
-            <table class="table table-responsive table-hover">
-                    <thead>
-                        <tr>
-                        <th scope="col">Record No</th>
-                        <th scope="col">Court Name</th>
-                        <th scope="col">Case Type</th>
-                        <th scope="col">Case No</th>
-                        <th scope="col">Case Year</th>
-                        <th scope="col">Fir No</th>
-                        <th scope="col">Fir Year</th>
-                        <th scope="col">Parties</th>
-                        <th scope="col">institution</th>
-                        <th scope="col">Disposal</th>
-                        <th scope="col">Shelf No</th>
-                        <th scope="col">Row No</th>
-                        <th scope="col">Bundle / Gathri</th>
-                        <th scope="col">Case Status</th>
-                        <th scope="col">Remarks</th>
-                        <th scope="col" colspan="2">OPERATION</th>
-                        </tr>
-                    </thead>
-            <?php
-
-
-            if(isset($_POST['submit2'])){
-
-            $case_no = $_POST['case_no'];
-            $case_year = $_POST['case_year'];
-            $fir_no = $_POST['fir_no'];
-            $fir_year = $_POST['fir_year'];
-            
-            $searchquery = "SELECT * FROM shush";
-            $query = mysqli_query($con,$searchquery);
-            while($rel = mysqli_fetch_array($query)){
-
-                ?>
-
-                <tr>
-                                            <td><?php echo $res['record_no']; ?></td>
-                                            <td><?php echo $res['court_name'];?></td>
-                                            <td><?php echo $res['case_type']; ?></td>
-                                            <td><?php echo $res['case_no'];   ?></td>
-                                            <td><?php echo $res['case_year']; ?></td>
-                                            <td><?php echo $res['fir_no'];    ?></td>
-                                            <td><?php echo $res['fir_year'];  ?></td>
-                                            <td><?php echo $res['name_parties'];?></td>
-                                            <td><?php echo $res['date_ins'];  ?></td>
-                                            <td><?php echo $res['date_disp'];?></td>
-                                            <td><?php echo $res['shelf_no'];?></td>
-                                            <td><?php echo $res['row_no'];?></td>
-                                            <td><?php echo $res['bundle_no'];?></td>
-                                            <td><?php echo $res['case_status'];?></td>
-                                            <td><?php echo $res['remarks'];?></td>
-                                            <td><?php ?><i class="fa-solid fa-pen-to-square"></i></td>
-                                            <td><?php ?><i class="fa-solid fa-trash-can"></i></td>
-                                        </tr>
-                                            
-
-             <?php
-
-            }         
-            
-            }
-            
-
-
-            ?>
-
-
-            <!-- <div class="col-6 mb-4">
-                <label for="formGroupExampleInput2" class="form-label">Case Number</label>
-                <br><input type="number" name="case_no" ><br>
-            </div>
-
-            <div class="col-6 mb-4">
-                <label for="formGroupExampleInput2" class="form-label">Case Year</label>
-                <br><input type="number" name="case_year" ><br>
-            </div>
-
-
-
-            <div class="col-6 mb-4">
-                <label for="formGroupExampleInput2" class="form-label">Fir Number</label>
-                <br><input type="number" name="fir_no" ><br>
-            </div>
-
-            <div class="col-6 mb-4">
-                <label for="formGroupExampleInput2" class="form-label">Fir Year</label>
-                <br><input type="number" name="fir_year" ><br>
-            </div>
-
-            <div class="col-sl-4 col-md-3 mb-4">
-                <label for="formGroupExampleInput2" class="form-label">Name of Parties</label>
-                <br><input type="text" name="name_parties" ><br>
-            </div> -->
-
-
-            
+            </div>     
 
             <div class="col-12">                
+
             <input type="submit" name="submit2"><br>
+
             </div>
 
         </form>
     
                    
-    </div>
+</div>
 
         
-</div>
+
 
 
 

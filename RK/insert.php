@@ -14,6 +14,8 @@ if(isset($_POST['submit'])) // CRIMINAL FORM PHP CODE
       && !empty($_POST['case_year'])
       && !empty($_POST['fir_no'])
       && !empty($_POST['fir_year'])
+      && !empty($_POST['sections'])
+      && !empty($_POST['ps'])
       && !empty($_POST['name_parties'])
       && !empty($_POST['date_ins'])
       && !empty($_POST['date_disp'])
@@ -21,7 +23,7 @@ if(isset($_POST['submit'])) // CRIMINAL FORM PHP CODE
       && !empty($_POST['row_no'])
       && !empty($_POST['bundle_no'])     
       && !empty($_POST['case_status'])
-      && !empty($_POST['remarks'])
+    //   && !empty($_POST['remarks'])
 
 
         )
@@ -35,6 +37,8 @@ if(isset($_POST['submit'])) // CRIMINAL FORM PHP CODE
     $case_year = $_POST['case_year'];
     $fir_no = $_POST['fir_no'];
     $fir_year = $_POST['fir_year'];
+    $sections = $_POST['sections'];
+    $ps = $_POST['ps'];
     $name_parties = $_POST['name_parties'];
     $date_ins = $_POST['date_ins'];
     $date_disp = $_POST['date_disp'];
@@ -47,7 +51,7 @@ if(isset($_POST['submit'])) // CRIMINAL FORM PHP CODE
 //query Criminla Form
 
 
-    $result = "INSERT INTO shush(court_name,case_type,case_no,case_year,fir_no,fir_year,name_parties,date_ins,date_disp,shelf_no,row_no,bundle_no,case_status,remarks)VALUES('$court_name','$case_type','$case_no','$case_year','$fir_no','$fir_year','$name_parties','$date_ins','$date_disp','$shelf_no','$row_no','$bundle_no','$case_status','$remarks')";
+    $result = "INSERT INTO shush(court_name,case_type,case_no,case_year,fir_no,fir_year,sections,ps,name_parties,date_ins,date_disp,shelf_no,row_no,bundle_no,case_status,remarks)VALUES('$court_name','$case_type','$case_no','$case_year','$fir_no','$fir_year','$sections','$ps','$name_parties','$date_ins','$date_disp','$shelf_no','$row_no','$bundle_no','$case_status','$remarks')";
 
     if(mysqli_query($con,$result)){
         ?>

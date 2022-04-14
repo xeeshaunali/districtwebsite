@@ -323,6 +323,17 @@ include 'insert.php';
                         <br><input type="number" name="fir_year" ><br>
                     </div>
 
+
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput2" class="form-label">Under Section</label>
+                        <br><input type="number" name="sections" ><br>
+                    </div>
+                
+                    <div class="col-sl-4 col-md-3 mb-4">
+                        <label for="formGroupExampleInput" class="form-label">Police Station</label>
+                        <br><input type="number" name="ps" ><br>
+                    </div>
+
             
             
                      <div class="col-sl-4 col-md-3 mb-4">
