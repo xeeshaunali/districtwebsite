@@ -105,7 +105,7 @@ include 'insert.php';
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="single_case_search.php">
                     <i class="fa-brands fa-searchengin"></i>
                     <span>Single Case search</span></a>
             </li>
@@ -293,9 +293,9 @@ include 'insert.php';
                         <label for="case_type">Case Type</label><br>
                         <select name="case_type" ><br>
                         <option >criminal</option>
-                        <!-- <option value="criminal" selected="criminal">Criminal</option> -->
-                        <!-- <option value="civil">Civil</option>
-                        <option value="family">Family</option> -->
+                        <option value="criminal" selected="criminal">Criminal</option>
+                        <option value="civil">Civil</option>
+                        <option value="family">Family</option>
                         </select><br>
                     </div>
 

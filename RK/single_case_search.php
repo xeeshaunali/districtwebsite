@@ -1,7 +1,6 @@
 <?php
 //connection command through connection.php
 include 'connection.php';
-
 ?>
        
 
@@ -35,6 +34,15 @@ include 'connection.php';
     <link rel="stylesheet" href="/css/">
     <link rel="stylesheet" href="style.css">
     <script src="fontAwesome/js/all.js"></script>
+    <script type="text/javascript">
+
+        $(function() {
+            $("#from").datepicker();
+        });
+        $(function() {
+            $("#to").datepicker();
+        });
+        </script>
 
 
 </head>
@@ -230,130 +238,91 @@ include 'connection.php';
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
                                             
-<!--table with php code to show all data in html table-->
-<div class="main-div">
-                <h1 class="text-center text-primary">RECORD ROOM REGISTER</h1>
-    <div class="constainer-fluid">                
-                <table class="table table-responsive table-hover">
-                    <thead>
-                        <tr>
-                        <th scope="col">Record No</th>
-                        <th scope="col">Court Name</th>
-                        <th scope="col">Case Type</th>
-                        <th scope="col">Case No</th>
-                        <th scope="col">Case Year</th>
-                        <th scope="col">Fir No</th>
-                        <th scope="col">Fir Year</th>
-                        <th scope="col">Sections</th>
-                        <th scope="col">PS</th>
-                        <th scope="col">Parties</th>
-                        <th scope="col">institution</th>
-                        <th scope="col">Disposal</th>
-                        <th scope="col">Shelf No</th>
-                        <th scope="col">Row No</th>
-                        <th scope="col">Bundle / Gathri</th>
-                        <th scope="col">Case Status</th>
-                        <th scope="col">Remarks</th>
-                        <th scope="col" colspan="2">OPERATION</th>
-                        </tr>
-                    </thead>
+<!--Form-->
+<div class="container-fluid">
 
-                            <tbody>
-                                <!--FETCH QUERY-->
-                                        <?php $selectquery = "SELECT * FROM shush";
+    <h1 class="text-center text-primary">SINGLE SEARCH CASE</h1>
+    
+        
+            
 
-                                        $query = mysqli_query($con,$selectquery);
+    <form action="#" method="POST">
+        <div class="constainer-fluid">
 
-                                        $num = mysqli_num_rows($query);
-                                        //echo $num;
-                                        // echo $res[2];
-                                        while($res= mysqli_fetch_array($query))
-                                        {
-                                            
-                                            ?>
-                                        
-                                    
-                                        <tr>
-                                            <td><?php echo $res['record_no']; ?></td>
-                                            <td><?php echo $res['court_name'];?></td>
-                                            <td><?php echo $res['case_type']; ?></td>
-                                            <td><?php echo $res['case_no'];   ?></td>
-                                            <td><?php echo $res['case_year']; ?></td>
-                                            <td><?php echo $res['fir_no'];    ?></td>
-                                            <td><?php echo $res['fir_year'];  ?></td>
-                                            <td><?php echo $res['sections'];    ?></td>
-                                            <td><?php echo $res['ps'];  ?></td>
-                                            <td><?php echo $res['name_parties'];?></td>
-                                            <td><?php echo $res['date_ins'];  ?></td>
-                                            <td><?php echo $res['date_disp'];?></td>
-                                            <td><?php echo $res['shelf_no'];?></td>
-                                            <td><?php echo $res['row_no'];?></td>
-                                            <td><?php echo $res['bundle_no'];?></td>
-                                            <td><?php echo $res['case_status'];?></td>
-                                            <td><?php echo $res['remarks'];?></td>
+            <div class="row">                   
 
-                                            <td> <a href="edit_case.php?record_no=<?php echo $res['record_no']; ?>" data-bs-toggle="tooltip" data-bs-placement="left" title="Edit"><?php ?><i class="fa-solid fa-pen-to-square"></i></a></td>
+                        <div class="col-12 mb-4 mt-4">
+                            <label>CASE NUMBER</label>
+                            <input type="text" class="form-control" placeholder="First name" aria-label="First name" name="case_no">
+                        </div>
 
-                                            <td><a href="#" data-bs-toggle="tooltip" data-bs-placement="left" title="Delet"><?php ?><i class="fa-solid fa-trash-can"></i></a></td>
-                                        </tr>
-                                            
+                        <div class="col-12 mb-4">
+                            <label>CASE YEAR</label>
+                            <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" name="case_year">
+                        </div>
 
-                                            <?php
+                        <div class="col-12 mb-4">
+                            <label for="#">FIR NUMBER</label>
+                            <input type="text" class="form-control" placeholder="First name" aria-label="First name" name="fir_no">
+                        </div>
 
-                                        }
+                        <div class="col-12 mb-4">
+                            <label for="#">FIR YEAR</label>
+                            <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" name="fir_year">
+                        </div>
 
-                                        ?>
+                    
 
-                                                                                    
-                            </tbody>
-                </table>
-                   
-    </div>
+                        <div class="col-12">
+                        <input type="submit" name="submit2"><br>
+                        </div>
+            </div>  
+        </div>
+
+    </form>
+
+    
+                                                        
+                                                    </div>                                       
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                        
+                                </div>
 </div>
 
-<!--Pagination----->
-<nav aria-label="...">
-  <ul class="pagination">
-    <li class="page-item disabled">
-      <span class="page-link">Previous</span>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item active" aria-current="page">
-      <span class="page-link">2</span>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#">Next</a>
-    </li>
-  </ul>
-</nav>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <table class="table table-stripped table-responsive table-hover">
+                <thead>
+                    <tr>
+                        <th>Record_no</th>
+                        <th>Record_no</th>
+                        <th>Record_no</th>
+                        <th>Record_no</th>
+                        <th>Record_no</th>
+                        <th>Record_no</th>
+                        <th>Record_no</th>
+                        <th>Record_no</th>
+                        <th>Record_no</th>
+                        <th>Record_no</th>
+                        <th>Record_no</th>
+                        <th>Record_no</th>
+                        <th>Record_no</th>
+                        <th>Record_no</th>
+                        <th>Record_no</th>
+                        <th>Record_no</th>
+                    </tr>
 
-        
 
-
-
-
-                                            
-                                        </div>
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-
-                  
-
-            </div>
-          
-
+                </thead>
             
+            </table>
 
-            
-
-
-
+        </div>
+    </div>
+</div>
 
 
 
@@ -419,12 +388,4 @@ include 'connection.php';
 
 </body>
 
-
-<!--tooltip postion script-->
-<!-- <script>
-var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-  return new bootstrap.Tooltip(tooltipTriggerEl)
-})
-</script> -->
 </html>

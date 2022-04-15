@@ -107,7 +107,7 @@ include 'connection.php';
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="single_case_search.php">
                     <i class="fa-brands fa-searchengin"></i>
                     <span>Single Case search</span></a>
             </li>
