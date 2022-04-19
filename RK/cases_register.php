@@ -234,7 +234,7 @@ include 'connection.php';
 <div class="main-div">
                 <h1 class="text-center text-primary">RECORD ROOM REGISTER</h1>
     <div class="constainer-fluid">                
-                <table class="table table-responsive table-hover">
+                <table class="table table-responsive table-hover d-grid">
                     <thead>
                         <tr>
                         <th scope="col">Record No</th>
@@ -254,7 +254,7 @@ include 'connection.php';
                         <th scope="col">Bundle / Gathri</th>
                         <th scope="col">Case Status</th>
                         <th scope="col">Remarks</th>
-                        <th scope="col" colspan="2">OPERATION</th>
+                        <!-- <th scope="col" colspan="2">OPERATION</th> -->
                         </tr>
                     </thead>
 
@@ -291,10 +291,9 @@ include 'connection.php';
                                             <td><?php echo $res['bundle_no'];?></td>
                                             <td><?php echo $res['case_status'];?></td>
                                             <td><?php echo $res['remarks'];?></td>
+                                            <!-- <td> <a href="edit_case.php?record_no=<?php echo $res['record_no']; ?>" data-bs-toggle="tooltip" data-bs-placement="left" title="Edit"><?php ?><i class="fa-solid fa-pen-to-square"></i></a></td>
 
-                                            <td> <a href="edit_case.php?record_no=<?php echo $res['record_no']; ?>" data-bs-toggle="tooltip" data-bs-placement="left" title="Edit"><?php ?><i class="fa-solid fa-pen-to-square"></i></a></td>
-
-                                            <td><a href="#" data-bs-toggle="tooltip" data-bs-placement="left" title="Delet"><?php ?><i class="fa-solid fa-trash-can"></i></a></td>
+                                            <td><a href="#" data-bs-toggle="tooltip" data-bs-placement="left" title="Delet"><?php ?><i class="fa-solid fa-trash-can"></i></a></td> -->
                                         </tr>
                                             
 

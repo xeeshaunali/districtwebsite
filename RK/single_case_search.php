@@ -270,7 +270,6 @@ include 'connection.php';
                             <label for="#">FIR YEAR</label>
                             <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" name="fir_year">
                         </div>
-
                     
 
                         <div class="col-12">
@@ -291,34 +290,9 @@ include 'connection.php';
                                 </div>
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <table class="table table-stripped table-responsive table-hover">
-                <thead>
-                    <tr>
-                        <th>Record_no</th>
-                        <th>Record_no</th>
-                        <th>Record_no</th>
-                        <th>Record_no</th>
-                        <th>Record_no</th>
-                        <th>Record_no</th>
-                        <th>Record_no</th>
-                        <th>Record_no</th>
-                        <th>Record_no</th>
-                        <th>Record_no</th>
-                        <th>Record_no</th>
-                        <th>Record_no</th>
-                        <th>Record_no</th>
-                        <th>Record_no</th>
-                        <th>Record_no</th>
-                        <th>Record_no</th>
-                    </tr>
-
-
-                </thead>
+ 
             
-            </table>
+          
 
         </div>
     </div>
@@ -338,7 +312,6 @@ include 'connection.php';
 
         </div>
         <!-- End of Content Wrapper -->
-
     </div>
     <!-- End of Page Wrapper -->
 

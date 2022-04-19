@@ -103,7 +103,7 @@ include 'connection.php';
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="single_case_search.php">
                     <i class="fa-brands fa-searchengin"></i>
                     <span>Single Case search</span></a>
             </li>
@@ -244,8 +244,8 @@ include 'connection.php';
 
                     <div class="1">  <!--court drop down-->
                         <label for="formGroupExampleInput2" class="form-label" >Court Name</label><br>
-                        <select name="court_name"><br>
-                        <option value="all" selected>All</option>    
+                        <select name="court_name"><br>                           
+                        <option value=""></option>
                         <option value="dj">dj</option>    
                         <option value="adj-1">adj-1</option>
                         <option value="adj-2">adj-2-II</option>
@@ -268,7 +268,7 @@ include 'connection.php';
                     <!-- <div class="col-12 mb-4 mt-4">
                         <label for="case_type">Case Type</label><br>
                         <select name="case_type" ><br>                        
-                        <option value="criminal" selected="criminal">Criminal</option>
+                        <option value="criminal">Criminal</option>
                         <option value="civil">Civil</option>
                         <option value="family">Family</option>
                         </select><br>
@@ -294,10 +294,10 @@ include 'connection.php';
                         <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" name="fir_year">
                     </div>
 
-                    <div class="col-12 mb-4">
+                    <!-- <div class="col-12 mb-4">
                         <label for="#">NAME OF PARTIES</label>
                         <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" name="name_parties">
-                    </div>
+                    </div> -->
 
 
                     <div class="col-12">                
@@ -321,7 +321,7 @@ include 'connection.php';
 <div class="main-div">
                 <h1 class="text-center text-primary">RECORD ROOM REGISTER</h1>
     <div class="constainer-fluid">                
-                <table class="table table-responsive table-hover">
+                <table class="table table-responsive table-hover d-grid mb-3">
                     <thead>
                         <tr>
                         <th scope="col">Record No</th>
@@ -348,15 +348,10 @@ include 'connection.php';
                             <tbody>
                                 <!--FETCH QUERY-->
 <?php
-    if( 
-        isset($_POST['submit2'])
-        &&
-        ( 
-            isset($_POST['case_no']) || isset($_POST['case_year']) || isset($_POST['fir_no']) || isset($_POST['fir_year']) || isset($_POST['name_parties'])
-        )
-      )
+    if(isset($_POST['submit2']))
+        
 {
-    
+    // $court_name = $_POST['court_name'];
     // $case_type = $_POST['case_type'];
     $case_no = $_POST['case_no'];
     $case_year = $_POST['case_year'];
@@ -373,13 +368,22 @@ include 'connection.php';
     // $case_status = $_POST['case_status'];   
     // $remarks = $_POST['remarks'];
 
-    // $searchquery = "SELECT * FROM shush WHERE court_name LIKE %$court_name% AND (case_no LIKE %$case_no% AND case_year LIKE %$case_year%) OR (fir_no LIKE %$fir_no% AND fir_year LIKE %$fir_year%)";
+    
 
-    $searchquery = "SELECT * FROM shush WHERE case_no='$case_no' AND case_year='$case_year' OR fir_no='$fir_no' AND fir_year='$fir_year'";
-    $rel = mysqli_query($con,$searchquery); 
+    $searchquery = "SELECT * FROM shush WHERE (fir_no=$fir_no AND fir_year=$fir_year)"; 
+         
+
+    $data = mysqli_query($con,$searchquery) or die( mysqli_error($con)); 
     
+
+    if($data){
+        echo "success";
+    } else{
+        echo "failed". mysqli_connect_error(error_get_last());
+    }
+
     
-    while($query_data = mysqli_fetch_array($rel)){
+    while($query_data = mysqli_fetch_array($data)){
             ?>                      
                                         <tr>
                                             <td><?php echo $query_data['record_no']; ?></td>
@@ -400,7 +404,7 @@ include 'connection.php';
                                             <td><?php echo $query_data['case_status'];?></td>
                                             <td><?php echo $query_data['remarks'];?></td>
 
-                                            <td> <a href="search_cases.php?record_no=<?php echo $rel['record_no']; ?>" data-bs-toggle="tooltip" data-bs-placement="left" title="Edit"><?php ?><i class="fa-solid fa-pen-to-square"></i></a></td>
+                                            <td> <a href="search_cases.php?record_no=<?php echo $data['record_no']; ?>" data-bs-toggle="tooltip" data-bs-placement="left" title="Edit"><?php ?><i class="fa-solid fa-pen-to-square"></i></a></td>
 
                                             <td><a href="#" data-bs-toggle="tooltip" data-bs-placement="left" title="Delet"><?php ?><i class="fa-solid fa-trash-can"></i></a></td>
                                         </tr>
@@ -417,11 +421,7 @@ include 'connection.php';
 
     echo "Select atleast one option";
 
-    }
-
-
-
-                                        
+    }                                    
                                            
 
                                    
